@@ -1,0 +1,36 @@
+{
+  "main": "dist/index.js",
+  "scripts": {
+    "setup": "npm run createdb && npm install && npm start",
+    "createdb": "echo '{\"todos\": []}' > resources/data/db.json ",
+    "start": "run-p -l start:f start:b",
+    "lint": "eslint .",
+    "clean": "run-s clean:*",
+    "build": "run-s clean:f build:f:*",
+    "start:b": "json-server --watch resources/data/db.json --port 8080 --routes resources/api-routes.json",
+    "start:f": "webpack-dev-server --config resources/webpack/dev.config.js --colors",
+    "clean:f": "rm -rf public/build",
+    "build:f:dev": "webpack --config resources/webpack/dev.config.js",
+    "build:f:prod": "NODE_ENV=production webpack --config resources/webpack/prod.config.js -p"
+  },
+  "author": "Kabir Baidhya <kabirbaidhya@gmail.com>",
+  "devDependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-eslint": "^5.0.0",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-transform-object-assign": "^6.8.0",
+    "babel-preset-es2015": "^6.9.0",
+    "eslint": "2.2.0",
+    "json-loader": "^0.5.4",
+    "ngtemplate-loader": "^1.3.1",
+    "npm-run-all": "^2.3.0",
+    "raw-loader": "^0.5.1",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.16.2"
+  },
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-ui-router": "^0.3.1"
+  },
+  "private": true
+}
