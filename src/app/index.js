@@ -6,3 +6,5 @@ import config from './app.config';
 let app = angular.module('app', [uiRouter, todos]);
 
 app.config(config);
+
+export default app.name;

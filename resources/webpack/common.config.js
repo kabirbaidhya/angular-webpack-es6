@@ -2,7 +2,7 @@ var path = require('path');
 
 module.exports = {
     entry: {
-        'app': path.resolve(__dirname, '../../src/app.js')
+        'app': path.resolve(__dirname, '../../src/index.js')
     },
     output: {
         path: path.resolve(__dirname, '../../public/build')
@@ -10,8 +10,8 @@ module.exports = {
     module: {
         loaders: [
             { test: /\.json$/, loader: 'json' },
+            { test: /\.html$/, loader: 'raw' },
             { test: /\.jsx?$/, include: /src/, exclude: /node_modules/, loader: 'babel' },
-            { test: /\.html$/, loader: 'raw' }
         ]
     }
 };
