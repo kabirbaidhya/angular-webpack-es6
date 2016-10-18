@@ -1,0 +1,7 @@
+<div ng-if="!vm.editing">
+    <input type="checkbox" ng-model="vm.data.completed" />
+    <span ng-click="vm.beginEdit()">{{vm.data.title}}</span>
+</div>
+<div ng-if="vm.editing">
+    <textbox text="vm.data.title" on-submit="vm.saveChanges" disabled="vm.saving"></textbox>
+</div>

@@ -17,13 +17,13 @@ export default {
 
         vm.handleKeyPress = function(e) {
             if (e.which === KeyCode.KEY_RETURN && angular.isFunction(vm.onSubmit)) {
-                vm.value = vm.value.trim();
+                vm.text = vm.text.trim();
 
-                if (!vm.value) {
+                if (!vm.text) {
                     return;
                 }
 
-                vm.onSubmit(vm.value, e);
+                vm.onSubmit(vm.text, e);
             }
         };
     }
