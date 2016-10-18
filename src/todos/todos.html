@@ -1,12 +1,15 @@
-<div ng-if="vm.loading">
-    Loading..
+<h1>TODO</h1>
+<div class="todo-app">
+    <div ng-if="vm.loading">
+        Loading..
+    </div>
+    <div ng-if="!vm.loading">
+        <todo-list items="vm.todos"></todo-list>
+    </div>
+    <textbox
+        placeholder="Enter TODO Item"
+        text="vm.todoInput"
+        disabled="vm.saving"
+        on-submit="vm.saveTodo"
+    ></textbox>
 </div>
-<div ng-if="!vm.loading">
-    <todo-list items="vm.todos"></todo-list>
-</div>
-<textbox
-    placeholder="Enter TODO Item"
-    text="vm.todoInput"
-    disabled="vm.saving"
-    on-submit="vm.saveTodo"
-></textbox>
