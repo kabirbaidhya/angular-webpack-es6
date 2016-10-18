@@ -1,1 +1,6 @@
-Todos tempalate
+<div ng-if="vm.loading">
+    Loading..
+</div>
+<div ng-if="!vm.loading">
+    <todo-list items="vm.todos"></todo-list>
+</div>

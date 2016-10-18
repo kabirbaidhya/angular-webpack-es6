@@ -1,0 +1,8 @@
+<p ng-if="!vm.hasItems()" class="message">No TODO Items</p>
+<ul ng-if="vm.hasItems()" class="todos">
+    <li ng-repeat="item in vm.items">
+        <label>
+            <input type="checkbox" ng-model="item.completed" />{{item.title}}
+        </label>
+    </li>
+</ul>
