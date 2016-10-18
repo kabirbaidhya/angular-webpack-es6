@@ -1,4 +1,3 @@
-
 var webpack = require('webpack');
 var common = require('./common.config.js');
 
@@ -15,6 +14,15 @@ module.exports = {
                 'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
             }
         }),
-        new webpack.optimize.UglifyJsPlugin({compress: {warnings: false}})
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery'
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false
+            }
+        })
     ]
 };
