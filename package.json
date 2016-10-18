@@ -31,7 +31,8 @@
   "dependencies": {
     "angular": "^1.5.8",
     "angular-resource": "^1.5.8",
-    "angular-ui-router": "^0.3.1"
+    "angular-ui-router": "^0.3.1",
+    "keycode-js": "0.0.2"
   },
   "private": true
 }

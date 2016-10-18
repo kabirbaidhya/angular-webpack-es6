@@ -4,11 +4,15 @@ import ngResource from 'angular-resource';
 import config from './todos.config';
 import TodoService from './TodoService';
 import TodosController from './TodosController';
-import todoList from './components/todoList';
+
+// Components
+import textbox from './components/textbox/textbox';
+import todoList from './components/todo-list/todoList';
 
 let todos = angular.module('todos', [uiRouter, ngResource]);
 
 todos.config(config)
+    .component('textbox', textbox)
     .component('todoList', todoList)
     .service('TodoService', TodoService)
     .controller('TodosController', TodosController);
