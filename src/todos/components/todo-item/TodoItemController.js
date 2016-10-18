@@ -1,6 +1,6 @@
-TodoItemController.$inject = ['TodoService'];
+TodoItemController.$inject = ['$scope', 'TodoService'];
 
-export default function TodoItemController(TodoService) {
+export default function TodoItemController($scope, TodoService) {
     let vm = this;
 
     vm.editing = false;
@@ -23,4 +23,8 @@ export default function TodoItemController(TodoService) {
                 vm.saving = false;
             });
     };
+
+    $scope.$watch('vm.data.completed', () => {
+        vm.saveChanges()
+    });
 }

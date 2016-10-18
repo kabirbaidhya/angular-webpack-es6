@@ -1,8 +1,8 @@
 {
     "todos": [
-        {"id": 1, "title": "Test 1", "completed": true},
-        {"id": 2, "title": "Test 2", "completed": true},
-        {"id": 3, "title": "Test 3", "completed": false},
-        {"id": 4, "title": "Test 4", "completed": false}
+        {"id": 1, "title": "Learn Javascript Basics", "completed": true},
+        {"id": 2, "title": "Learn Angular", "completed": true},
+        {"id": 3, "title": "Learn Webpack", "completed": false},
+        {"id": 4, "title": "Learn ES6+ features", "completed": false}
     ]
 }
