@@ -2,6 +2,6 @@
         class="textbox"
         placeholder="{{vm.placeholder}}"
         ng-model="vm.text"
-        ng-keypress="vm.handleKeyPress($event)"
+        ng-keyup="vm.handleKeyPress($event)"
         ng-disabled="vm.disabled"
 />

@@ -5,6 +5,11 @@
         <a href class="delete" ng-click="vm.delete()">Delete</a>
     </div>
     <div ng-if="vm.editing">
-        <textbox text="vm.data.title" on-submit="vm.saveChanges" disabled="vm.saving"></textbox>
+        <textbox
+            text="vm.data.title"
+            on-submit="vm.saveChanges"
+            on-escape="vm.stopEdit"
+            disabled="vm.saving" >
+        </textbox>
     </div>
 </div>

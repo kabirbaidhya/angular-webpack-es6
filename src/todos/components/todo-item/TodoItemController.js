@@ -14,6 +14,10 @@ export default function TodoItemController($scope, TodoService) {
         vm.editing = false;
     };
 
+    vm.cancelEdit = function() {
+        $scope.$apply(() => vm.stopEdit());
+    };
+
     vm.saveChanges = function() {
         vm.saving = true;
 
