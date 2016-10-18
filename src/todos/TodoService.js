@@ -7,6 +7,7 @@ export default function TodoService($resource) {
 
     this.getAll = () => todo.query().$promise;
     this.get = (id) => todo.get({id: id}).$promise;
+    this.save = (data) => todo.save(data).$promise;
     this.update = (id, data) => todo.update({id: id}, data).$promise;
     this.delete = (id) => todo.delete({id: id}).$promise;
 }

@@ -4,6 +4,17 @@ export default function TodosController(TodoService) {
     let vm = this;
 
     vm.todos = [];
+    vm.todoInput = '';
+    vm.saving = false;
+
+    vm.saveTodo = function() {
+        let todo = {
+            title: vm.todoInput,
+            completed: false
+        };
+
+        saveTodoItem(todo);
+    };
 
     function init() {
         loadTodos();
@@ -18,6 +29,19 @@ export default function TodosController(TodoService) {
             })
             .finally(() => {
                 vm.loading = false;
+            });
+    }
+
+    function saveTodoItem(todo) {
+        vm.saving = true;
+
+        TodoService.save(todo)
+            .then((item) => {
+                vm.todos.push(item);
+                vm.todoInput = '';
+            })
+            .finally(() => {
+                vm.saving = false;
             });
     }
 
