@@ -24,6 +24,19 @@ export default function TodoItemController($scope, TodoService) {
             });
     };
 
+    vm.delete = function() {
+        vm.saving = true;
+
+        TodoService.delete(vm.data.id)
+            .then(() => {
+                // Trigger parent's handler function after successful delete.
+                vm.onDelete(vm.data.id);
+            })
+            .finally(() => {
+                vm.saving = false;
+            });
+    };
+
     $scope.$watch('vm.data.completed', () => {
         vm.saveChanges()
     });

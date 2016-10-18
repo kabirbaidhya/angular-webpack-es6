@@ -4,7 +4,16 @@
     list-style: none;
 }
 
-.todo-list .todo.completed {
+.todo-list .todo.completed .title {
     text-decoration: line-through;
     color: #666;
+}
+
+.todo-list .todo .delete {
+    display: none;
+    cursor: pointer;
+}
+
+.todo-list .todo:hover .delete {
+    display: inline-block;
 }

@@ -4,10 +4,17 @@ export default {
     },
     template: require('./todoList.html'),
     controller() {
-        this.items = this.items || [];
+        let vm = this;
 
-        this.hasItems = function() {
-            return (this.items.length > 0);
+        vm.items = vm.items || [];
+
+        vm.hasItems = function() {
+            return (vm.items.length > 0);
+        };
+
+        vm.handleDelete = function(deletedItemId) {
+            // Remove the deleted item out of the list
+            vm.items = vm.items.filter(item => (item.id !== deletedItemId));
         };
     },
     controllerAs: 'vm'
