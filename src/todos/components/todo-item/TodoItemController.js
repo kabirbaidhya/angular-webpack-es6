@@ -41,7 +41,9 @@ export default function TodoItemController($scope, TodoService) {
             });
     };
 
-    $scope.$watch('vm.data.completed', () => {
-        vm.saveChanges()
+    $scope.$watch('vm.data.completed', (newVal, oldVal) => {
+        if (newVal !== oldVal) {
+            vm.saveChanges();
+        }
     });
 }
