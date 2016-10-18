@@ -2,7 +2,7 @@
   "main": "dist/index.js",
   "scripts": {
     "setup": "npm run createdb && npm install && npm start",
-    "createdb": "echo '{\"todos\": []}' > resources/data/db.json ",
+    "createdb": "cp resources/data/db.json.dist resources/data/db.json ",
     "start": "run-p -l start:f start:b",
     "lint": "eslint .",
     "clean": "run-s clean:*",
