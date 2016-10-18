@@ -16,4 +16,11 @@ $ npm run build
 ```
 ## Description
 
-A simple and lightweight starter project for Angular 1.x with ES6 & Webpack.
+A simple and lightweight starter project for Angular 1.5.x with ES6 & Webpack.
+
+## TODOs for the TodoApp
+ * Cancel Edit on Esc Key.
+ * Cancel Edit on click anywhere else than the textbox.
+ * Don't update if nothing has changed
+ * Filter Completed/Pending items
+ * Have a good Design
