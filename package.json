@@ -31,6 +31,7 @@
   "dependencies": {
     "angular": "^1.5.8",
     "angular-resource": "^1.5.8",
+    "angular-ui-block": "0.0.1-0",
     "angular-ui-router": "^0.3.1",
     "jquery": "^3.1.1",
     "keycode-js": "0.0.2"

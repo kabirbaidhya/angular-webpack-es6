@@ -1,3 +1,9 @@
+.todo-app {
+    min-height: 100px;
+    width: 300px;
+    margin: 0 auto;
+}
+
 .todo-list {
     margin: 0;
     padding: 0;

@@ -1,13 +1,13 @@
-TodoService.$inject = ['$resource'];
+TodoService.$inject = ['$resource', '$timeout'];
 
-export default function TodoService($resource) {
+export default function TodoService($resource, $timeout) {
     const API_BASE = 'http://127.0.0.1:8080';
 
     let todo = $resource(API_BASE + '/api/todos/:id', null, {
         'query': { method: 'GET', isArray: true },
         'get': { method: 'GET' },
         'save': { method: 'POST' },
-        'update': {method: 'PUT'},
+        'update': { method: 'PUT' },
         'delete': { method: 'DELETE' }
     });
 
